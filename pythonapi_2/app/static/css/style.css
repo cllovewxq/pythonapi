@@ -1,0 +1,266 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 34px;
+}
+
+h1 {
+	font-size: 34px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+.container-fluid {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.sigma-icon {
+	font-size: 72px;
+	padding: 30px;
+}
+
+.contact-icon {
+	font-size: 30px;
+	padding: 0 20px 0 0;
+	min-width: 50px;
+}
+
+.site-title {
+	padding: 0;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.site-title h1 {
+	color: #333;
+}
+
+.site-title h2 {
+	color: #888;
+	font-size: 16px;
+	padding-top: 20px;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+
+.main-menu {
+	margin-top: 60px;
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+
+.navbar {
+	float: right;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.nav-link {
+	padding: 10px 15px;
+	font-size: 18px;
+}
+
+.sigma-hr {
+   	margin: 15px -15px !important;
+}
+
+.sigmapad {
+	padding: 0 1px 1px 0 !important;
+	margin: 0 !important;
+}
+
+.sigmano {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.sigma-home h1 {
+	font-size: 48px;
+}
+.sigma-home p {
+	font-size: 24px;
+	color: #555;
+	line-height: 44px;
+}
+.sigma-home {
+	padding: 0px;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background: url(../images/tm-sigma-00.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.space40 {
+	margin-bottom: 40px;
+}
+
+.sigma-start {
+	margin: 10px;
+	padding: 16px 40px;
+	min-width: 200px;
+	font-size: 22px;
+}
+
+.sigma-content {
+	padding: 60px 40px;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	min-height: 280px;
+}
+
+.sigma-section-header {
+	padding: 0px;
+	padding-top: 100px;
+	padding-bottom: 80px;
+	background: url(../images/tm-sigma-00.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.sigma-home p, .sigma-content p, .sigma-section-header p {
+	padding: 20px 0 0 0;
+}
+
+.form-group {
+	margin: 20px 0;
+}
+
+/* Sigma BG Colors --- BEGIN */
+
+.sigma-bg-lightgray {
+	background-color: #E4E8E8;
+}
+
+.sigma-bg-gray {
+	background-color: #999;
+	color: #FFF;
+}
+
+.sigma-bg-darkgray {
+	background-color: #666;
+	color: #FFF;
+}
+
+.sigma-bg-black {
+	background-color: #444;
+	color: #FFF;
+}
+
+.sigma-bg-blue {
+	background-color: #28B;
+	color: #FFF;
+}
+
+.sigma-bg-red {
+	background-color: #A52;
+	color: #FFF;
+}
+
+.sigma-bg-pink {
+	background-color: #EBE;
+	color: #000;
+}
+
+.sigma-bg-lightblue {
+	background-color: #92C4F8;
+	color: #000;
+}
+
+.sigma-bg-yellow {
+	background-color: #A4A430;
+	color: #FFF;
+}
+
+.sigma-bg-green {
+	background-color: #496;
+	color: #FFF;
+}
+
+/* Sigma BG Colors --- END */
+
+.sigma-copyright {
+	margin: 0;
+	padding: 10px 0 30px 0;
+	font-size: 14px;
+}
+
+@media (max-width:1330px) {
+	body {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	h1 {
+		font-size: 28px;
+	}
+	
+	h2 {
+		font-size: 24px;
+	}
+	.sigma-icon {
+		font-size: 48px;
+		padding: 20px;
+	}
+	.site-title h2 {
+		font-size: 14px;
+		padding-top: 10px;
+	}
+	.sigma-content {
+		padding: 30px 20px;
+		min-height: 200px;
+	}
+	.sigma-home h1 {
+		font-size: 40px;
+	}
+	.sigma-home p {
+		font-size: 18px;
+		line-height: 36px;
+	}
+}
+
+@media (max-width:990px) {
+	.main-menu {
+		margin: 0px;
+	}
+}
+
+@media (max-width:767px) {
+	.nav-link {
+		padding: 5px 10px;
+		font-size: 16px;
+	}
+	.sigma-home h1 {
+		font-size: 30px;
+	}
+	.sigma-home p {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.sigma-content {
+		padding: 20px;
+		min-height: 100px;
+	}
+}

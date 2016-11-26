@@ -1,0 +1,29 @@
+{% extends "back.html" %}
+
+{% block hello %}
+<div class="page-header">
+	<h1>模块列表</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th id="model_id">编号</th>
+			<th id="model_name">模块名称</th>
+			<th id="operation">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for model_form in model_forms %}
+		<tr>
+			<td id="model_id">{{ model_form.model_id }}</td>
+			<td id="model_name">{{ model_form.model_name }}</td>
+			<td id="operation">
+				<a class="btn btn-sm btn-default" href="/editmodel/{{ model_form.model_id }}" role="button">编辑</a>
+				<a class="btn btn-sm btn-default" href="/interface/{{ model_form.model_id }}" role="button">接口列表</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<p><a class="btn btn-default" href="/addmodel" role="button">新增模块</a></p>
+{% endblock %}

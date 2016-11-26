@@ -1,0 +1,43 @@
+{% extends "back.html" %}
+
+{% block page_content %}		
+<form method="post">
+{{ add_parameter_response.hidden_tag() }}
+	<div class="page-header">
+		<h1>返回参数详情</h1>
+	</div>
+	<dl class="dl-horizontal">
+		<dt>参数名称</dt>
+		<dd>{{ add_parameter_response.parameter_name }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>是否必须</dt>
+		<dd>{{ add_parameter_response.necessary }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>类型</dt>
+		<dd>{{ add_parameter_response.type }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>默认值</dt>
+		<dd>{{ add_parameter_response.default }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>备注</dt>
+		<dd>{{ add_parameter_response.remark }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>从属参数ID</dt>
+		<dd>{{ add_parameter_response.parameter_group_id }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+		<dt>层级</dt>
+		<dd>{{ add_parameter_response.level }}</dd>
+	</dl>
+	<div>
+		{{ submit.hidden_tag() }}
+		{{ submit.submit(class="btn btn-default", value='保存') }}
+		<a class="btn btn-default" href="/parameter_response/{{ model_id }}&{{ interface_id }}" role="button">返回</a>
+	</div>
+</form>
+{% endblock %}

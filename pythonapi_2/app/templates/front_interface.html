@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block hello %}
+<div class="page-header">
+	<h1>接口说明</h1>
+</div>
+<dl class="dl-horizontal">
+	<dt>API接口名称</dt>
+	<dd>{{ interface_model_one.interface_name }}</dd>
+	<dt>API接口请求地址</dt>
+	<dd>{{ interface_model_one.interface_url }}</dd>
+	<dt>API接口请求方法</dt>
+	<dd>{{ interface_model_one.interface_method }}</dd>
+</dl>
+
+		
+<div class="page-header">
+	<h1>请求参数</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th id="parameter_name">名称</th>
+			<th id="necessary">是否必填</th>
+			<th id="type">类型</th>
+			<th id="default">示例值</th>
+			<th id="remark">描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for parameter_request in g_parameter_request %}
+		<tr>
+			<td id="parameter_name" class="child-{{ parameter_request.level }}">{{ parameter_request.parameter_name }}</td>
+			<td id="necessary">{{ parameter_request.necessary }}</td>
+			<td id="type">{{ parameter_request.type }}</td>
+			<td id="def">{{ parameter_request.default }}</td>
+			<td id="remark">{{ parameter_request.remark }}</td
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="page-header">
+	<h1>返回参数</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th id="parameter_name">名称</th>
+			<th id="necessary">是否必填</th>
+			<th id="type">类型</th>
+			<th id="def">示例值</th>
+			<th id="remark">描述</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for parameter_response in g_parameter_response %}
+		<tr>
+			<td id="parameter_name" class="child-{{ parameter_response.level }}">{{ parameter_response.parameter_name }}</td>
+			<td id="necessary">{{ parameter_response.necessary }}</td>
+			<td id="type">{{ parameter_response.type }}</td>
+			<td id="def">{{ parameter_response.default }}</td>
+			<td id="remark">{{ parameter_response.remark }}</td
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="page-header">
+	<h1>请求示例</h1>
+</div>
+<div class="well">
+	<p>{{ interface_model_one.request_exam }}</p>
+</div>
+
+<div class="page-header">
+	<h1>返回示例</h1>
+</div>
+<div class="well">
+	<p>{{ interface_model_one.response_exam }}</p>
+</div>
+{% endblock %}
+
+{% block model %}
+<div class="list-group">		
+	<a href="/front_model/{{ model_one.model_id }}" class="list-group-item active">{{ model_one.model_name }}</a>
+	{% for interface_model_form in interface_model_forms %}
+	<a href="/front_interface/{{ model_one.model_id }}&{{ interface_model_form.interface_id }}" class="list-group-item">{{ interface_model_form.interface_name }}</a>
+	{% endfor %}
+</div>
+{% endblock %}

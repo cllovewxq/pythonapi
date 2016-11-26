@@ -1,0 +1,44 @@
+{% extends "back.html" %}
+
+{% block hello %}		
+<div class="page-header">
+	<h1>请求参数列表</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th id="parameter_id">参数ID</th>
+			<th id="parameter_name">参数名称</th>
+			<th id="necessary">是否必须</th>
+			<th id="type">类型</th>
+			<th id="default">默认值</th>
+			<th id="remark">备注</th>
+			<th id="parameter_group_id">从属</th>
+			<th id="level">层级</th>
+			<th id="operation">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for parameter_request_form in parameter_request_forms %}
+		<tr>
+			<td id="parameter_id">{{ parameter_request_form.parameter_id }}</td>
+			<td id="parameter_name">{{ parameter_request_form.parameter_name }}</td>
+			<td id="necessary">{{ parameter_request_form.necessary }}</td>
+			<td id="type">{{ parameter_request_form.type }}</td>
+			<td id="default">{{ parameter_request_form.default }}</td>
+			<td id="remark">{{ parameter_request_form.remark }}</td>
+			<td id="parameter_group_id">{{ parameter_request_form.parameter_group_id }}</td>
+			<td id="level">{{ parameter_request_form.level }}</td>
+			<td id="operation">
+				<a class="btn btn-sm btn-default" href="/editparameter_request/{{ model_id }}&{{ interface_id }}&{{ parameter_request_form.parameter_id }}" role="button">编辑</a>
+				<a class="btn btn-sm btn-default" href="/deleteparameter_request/{{ model_id }}&{{ interface_id }}&{{ parameter_request_form.parameter_id }}" role="button">删除</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<p>
+	<a class="btn btn-default" href="/addparameter_request/{{ model_id }}&{{ interface_id }}" role="button">新增请求参数</a>
+	<a class="btn btn-default" href="/interface/{{ model_id }}" role="button">返回</a>
+</p>
+{% endblock %}

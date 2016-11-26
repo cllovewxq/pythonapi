@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+    <div class="page-header">
+        <p>
+        {% if name %}
+            {{ name }}
+        {% endif %}
+        <br />
+        {% if url %}
+            {{ url }}
+        {% endif %}
+        <br />
+        {% if method %}
+            {{ method }}
+        {% endif %}
+		<br />
+		{% if interface_request %}
+            {{ interface_request }}
+        {% endif %}
+		<br />
+		{% if interface_response %}
+            {{ interface_response }}
+        {% endif %}
+		<br />
+		{% if request_exam %}
+            {{ request_exam }}
+        {% endif %}
+		<br />
+		{% if response_exam %}
+            {{ response_exam }}
+        {% endif %}
+        </p>
+		<input type="button" value="新增请求参数" id = "add_request"/>
+    </div>
+			<script type="text/javascript">
+	$(function(){
+		$("#add_request").click(function(){
+			var parent = $("#interface_request").parent();
+			var html= '<div><input class="form-control" id="interface_response" name="interface_response1[]" required="" type="text" value="1"><input type="button" value="删除" onclick="del(this)"/></div>';
+			parent.append(html);
+		});
+	})
+	
+	function del(info){
+	console.log(info);
+		info.parentNode.remove()
+	}
+	</script>
+    {{ wtf.quick_form(form) }}
+{% endblock %}

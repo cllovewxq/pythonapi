@@ -1,0 +1,22 @@
+{% extends "back.html" %}
+
+{% block page_content %}		
+<form method="post">
+{{ edit_model.hidden_tag() }}
+	<div class="page-header">
+		<h1>模块详情</h1>
+	</div>
+	<dl class="dl-horizontal">
+		<dt>模块名称</dt>
+		<dd>{{ edit_model.model_name }}</dd>
+		<dt></dt>
+		<dd>&nbsp;</dd>
+	</dl>
+	
+	<div>
+		{{ submit.hidden_tag() }}
+		{{ submit.submit(class="btn btn-default", value='保存') }}
+		<a class="btn btn-default" href="/model" role="button">返回</a>
+	</div>
+</form>
+{% endblock %}

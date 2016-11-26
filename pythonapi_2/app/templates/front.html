@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block hello %}
+<div class="jumbotron">
+	<h1>欢迎<h1>
+	<p>API接口平台模块列表</p>
+</div>
+{% endblock %}
+
+{% block model %}
+<div class="list-group">		
+	<a href="/font" class="list-group-item active">模块列表</a>
+	{% for model_form in model_forms %}
+	<a href="/front_model/{{ model_form.model_id }}" class="list-group-item">{{ model_form.model_name }}</a>
+	{% endfor %}
+</div>
+{% endblock %}

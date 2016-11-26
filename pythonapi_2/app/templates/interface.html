@@ -1,0 +1,35 @@
+{% extends "back.html" %}
+
+{% block hello %}		
+<div class="page-header">
+	<h1>接口列表</h1>
+</div>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th id="interface_id">编号</th>
+			<th id="interface_name">接口名称</th>
+			<th id="interface_url">接口地址</th>
+			<th id="operation">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for interface_model_form in interface_model_forms %}
+		<tr>
+			<td id="interface_id">{{ interface_model_form.interface_id }}</td>
+			<td id="interface_name">{{ interface_model_form.interface_name }}</td>
+			<td id="interface_url">{{ interface_model_form.interface_url }}</td>
+			<td id="operation">
+				<a class="btn btn-sm btn-default" href="/editinterface/{{ model_id }}&{{ interface_model_form.interface_id }}" role="button">编辑</a>
+				<a class="btn btn-sm btn-default" href="/parameter_request/{{ model_id }}&{{ interface_model_form.interface_id }}" role="button">请求参数</a>
+				<a class="btn btn-sm btn-default" href="/parameter_response/{{ model_id }}&{{ interface_model_form.interface_id }}" role="button">返回参数</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<p>
+	<a class="btn btn-default" href="/addinterface/{{ model_id }}" role="button">新增接口</a>
+	<a class="btn btn-default" href="/model" role="button">返回</a>
+</p>
+{% endblock %}
